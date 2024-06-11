@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;public class Item {
+    private int id;
+    private String name;
+
+    public Item(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }public int getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }public void show() {
+        System.out.println("Item Name: " + name);
+    }
+    public String toString() {
+        return "Item{id=" + id + ", name='" + name + "'}";
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        List<Item> items = new ArrayList<>();
+        items.add(new Item(101, "Laptop"));
+        items.add(new Item(102, "Smartphone"));
+        items.add(new Item(103, "Tablet"));
+        items.add(new Item(104, "Monitor"));
+        items.add(new Item(105, "Keyboard"));
+        for (int i = 0; i < items.size(); i++) {
+            Item item = items.get(i);
+            item.show();
+        }
+        Map<Integer, String> itemMap = new HashMap<>();
+        for (Item item : items) {
+            itemMap.put(item.getId(), item.getName());
+        }
+            System.out.println("Item ID: " + entry.getKey() + ", Item Name: " + entry.getValue());
+        }
+    }
