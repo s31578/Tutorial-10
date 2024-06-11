@@ -1,0 +1,40 @@
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;class Item {
+    private int id;
+    private String name;public Item(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }public int getId() {
+        return id;
+    }public String getName() {
+        return name;
+    }public void show() {
+        System.out.println("Item Name: " + name);
+    }
+    public String toString() {
+        return "Item{id=" + id + ", name='" + name + "'}";
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        List<Item> items = new ArrayList<>();
+        items.add(new Item(106, "Printer"));
+        items.add(new Item(107, "Scanner"));
+        items.add(new Item(108, "Mouse"));
+        items.add(new Item(109, "Webcam"));
+        items.add(new Item(110, "Speaker"));
+        items.add(new Item(111, "Microphone"));
+        items.add(new Item(112, "Router"));
+        items.add(new Item(113, "Modem"));
+        items.add(new Item(114, "External Hard Drive"));
+        items.add(new Item(115, "USB Flash Drive"));
+        List<Item> subList = items.subList(0, 5);
+        Set<Item> itemSet = new HashSet<>(subList);
+        for (Item item : itemSet) {
+            System.out.println(item);
+        }
+    }
+}
